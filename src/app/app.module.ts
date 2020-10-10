@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { NormalTimeComponent } from './normal-time/normal-time.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NormalTimeComponent
   ],
   imports: [
     BrowserModule,
