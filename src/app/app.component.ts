@@ -34,6 +34,6 @@ export class AppComponent {
     const end = moment();
 
     this.range = moment.range(start, end);
-    this.seconds = this.range.diff('second');
+    this.seconds = Math.abs(this.range.diff('second'));
   }
 }
