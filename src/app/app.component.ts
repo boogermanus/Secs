@@ -8,9 +8,11 @@ import { NgbCalendar, NgbDateStruct, NgbTimeStruct } from '@ng-bootstrap/ng-boot
 })
 export class AppComponent {
   date: NgbDateStruct;
-  time: NgbTimeStruct = {hour: 0, minute: 0, second: 0};
+  time: NgbTimeStruct;
 
   constructor(private calendar: NgbCalendar) {
     this.date = this.calendar.getToday();
+    const date = new Date();
+    this.time = {hour: date.getHours(), minute: date.getMinutes(), second: date.getSeconds()};
   }
 }
