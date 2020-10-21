@@ -7,7 +7,7 @@ export class SecsConverterService {
 
   constructor() { }
 
-  getKiloSeconds(): void {
-
+  getKiloSeconds(seconds: number): number {
+    return seconds / Math.pow(10, 3);
   }
 }

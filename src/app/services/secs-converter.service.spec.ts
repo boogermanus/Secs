@@ -17,4 +17,14 @@ describe('SecsConverterService', () => {
   it('should have method getKiloSeconds', () => {
     expect(service.getKiloSeconds).toBeDefined();
   });
+
+  describe('getKiloSeconds()', () => {
+    it('should return 1 kilosecond', () => {
+      expect(service.getKiloSeconds(1000)).toEqual(1);
+    });
+    it('should not be equal to 1 kilosecond', () => {
+      const result = service.getKiloSeconds(1001);
+      expect(result).not.toEqual(1);
+    });
+  });
 });
