@@ -22,16 +22,17 @@ export class AppComponent {
   }
 
   calculate() {
-    this.range = moment.range(moment(
-      {
-        y: this.date.year,
-        M: this.date.month,
-        d: this.date.day,
-        h: this.time.hour,
-        m: this.time.minute,
-        s: this.time.second,
-      }),
-      moment(new Date()));
+    const start = moment({
+      y: this.date.year,
+      M: this.date.month - 1, // subtract 1 because it's not that month
+      d: this.date.day,
+      h: this.time.hour,
+      m: this.time.minute,
+      s: this.time.second,
+    });
+    const end = moment();
+
+    this.range = moment.range(start, end);
 
     console.log(this.range.diff('second'));
     console.log(moment());
