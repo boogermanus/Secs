@@ -17,8 +17,8 @@ export class AppComponent {
 
   constructor(private calendar: NgbCalendar) {
     this.date = this.calendar.getToday();
-    const date = new Date();
-    this.time = { hour: date.getHours(), minute: date.getMinutes(), second: date.getSeconds() };
+    const date = moment();
+    this.time = { hour: date.hours(), minute: date.minutes(), second: date.seconds() };
   }
 
   calculate() {
@@ -31,6 +31,9 @@ export class AppComponent {
         m: this.time.minute,
         s: this.time.second,
       }),
-      moment());
+      moment(new Date()));
+
+    console.log(this.range.diff('second'));
+    console.log(moment());
   }
 }
