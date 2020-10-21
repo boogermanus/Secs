@@ -15,17 +15,16 @@
   <div class="row justify-content-center">
     Date: {{date | json}}
   </div>
-
   <div class="row justify-content-center">
     <ngb-timepicker [(ngModel)]="time" [seconds]="true"></ngb-timepicker>
   </div>
   <div class="row justify-content-center">
-    Date: {{time | json}}
+    Time: {{time | json}}
   </div>
   <div class="row justify-content-center">
     <button mat-raised-button (click)="calculate()">Calculate</button>
   </div>
-  <div class="row justify-content-center">
+  <!-- <div class="row justify-content-center">
     <p>{{range.diff('second')}}</p>
-  </div>
+  </div> -->
 </div>
