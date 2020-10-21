@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgbDateStruct, NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCalendar, NgbDateStruct, NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,9 @@ import { NgbDateStruct, NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppComponent {
   date: NgbDateStruct;
-  time: NgbTimeStruct;
+  time: NgbTimeStruct = {hour: 0, minute: 0, second: 0};
+
+  constructor(private calendar: NgbCalendar) {
+    this.date = this.calendar.getToday();
+  }
 }
