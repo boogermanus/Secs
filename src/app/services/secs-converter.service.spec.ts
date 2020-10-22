@@ -43,5 +43,10 @@ describe('SecsConverterService', () => {
       const result = service.calculate(Math.pow(10, 6));
       expect(result.megaSeconds).toBe(1);
     });
+
+    it('should return 1 giga second', () => {
+      const result = service.calculate(Math.pow(10, 9));
+      expect(result.gigaSeconds).toBe(1);
+    });
   });
 });

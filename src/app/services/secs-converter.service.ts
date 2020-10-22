@@ -8,6 +8,7 @@ export class SecsConverterService {
 
   private readonly KILO_SECOND = Math.pow(10, 3);
   private readonly MEGA_SECOND = Math.pow(10, 6);
+  private readonly GIGA_SECOND = Math.pow(10, 9);
   constructor() { }
 
   public calculate(seconds: number): ISecsCalculation {
@@ -18,10 +19,22 @@ export class SecsConverterService {
       gigaSeconds: 0
     };
 
+    result = this.getGigaSeconds(result);
     result = this.getMegaSeconds(result);
     result = this.getKiloSeconds(result);
 
     return result;
+  }
+
+  private getGigaSeconds(calculation: ISecsCalculation): ISecsCalculation {
+    if (calculation.seconds < this.GIGA_SECOND) {
+      return calculation;
+    }
+
+    calculation.gigaSeconds = calculation.seconds / this.GIGA_SECOND;
+    calculation.seconds = calculation.seconds % this.GIGA_SECOND;
+
+    return calculation;
   }
 
   private getMegaSeconds(calculation: ISecsCalculation): ISecsCalculation {
