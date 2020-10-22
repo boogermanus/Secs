@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NgbCalendar, NgbDateStruct, NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
 import * as Moment from 'moment';
 import { extendMoment } from 'moment-range';
+import { ISecsCalculation } from './models/isecs-calculation';
+import { SecsConverterService } from './services/secs-converter.service';
 const moment = extendMoment(Moment);
 
 @Component({
@@ -15,8 +17,10 @@ export class AppComponent {
   moment: any;
   range: any = null;
   seconds = 0;
+  calculation: ISecsCalculation;
 
-  constructor(private calendar: NgbCalendar) {
+  constructor(private calendar: NgbCalendar,
+              private secsConverterService: SecsConverterService) {
     this.date = this.calendar.getToday();
     const date = moment();
     this.time = { hour: date.hours(), minute: date.minutes(), second: date.seconds() };
@@ -35,5 +39,7 @@ export class AppComponent {
 
     this.range = moment.range(start, end);
     this.seconds = Math.abs(this.range.diff('second'));
+
+    this.calculation = this.secsConverterService.calculate(this.seconds);
   }
 }
