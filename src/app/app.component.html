@@ -1,5 +1,6 @@
 <div class="container">
-  <app-secs-date-time (momentChanged)="updateStartTime()"></app-secs-date-time>
+  <app-secs-date-time (momentChanged)="updateStartTime($event)" header="Start Date"></app-secs-date-time>
+  <app-secs-date-time header="End Date" [initialMoment]="end"></app-secs-date-time>
   <div class="row justify-content-center mt-2">
     <button mat-raised-button (click)="calculate()">Calculate</button>
   </div>
