@@ -26,27 +26,27 @@ describe('SecsConverterService', () => {
 
     it('it should return 999 seconds', () => {
       const result = service.calculate(999);
-      expect(result.seconds).toBe(999);
+      expect(result.seconds).toEqual(999);
     });
 
     it('it should return 1 kilosecond', () => {
       const result = service.calculate(1000);
-      expect(result.kiloSeconds).toBe(1);
+      expect(result.kiloSeconds).toEqual(1);
     });
 
-    it('should return 1 second for 1 kilosecond and 1 second', () => {
+    it('should return 1 kilosecond for 1 kilosecond and 1 second', () => {
       const result = service.calculate(1001);
-      expect(result.seconds).toBe(1);
+      expect(result.kiloSeconds).toEqual(1);
     });
 
     it('should return 1 mega second', () => {
       const result = service.calculate(Math.pow(10, 6));
-      expect(result.megaSeconds).toBe(1);
+      expect(result.megaSeconds).toEqual(1);
     });
 
     it('should return 1 giga second', () => {
       const result = service.calculate(Math.pow(10, 9));
-      expect(result.gigaSeconds).toBe(1);
+      expect(result.gigaSeconds).toEqual(1);
     });
   });
 });
