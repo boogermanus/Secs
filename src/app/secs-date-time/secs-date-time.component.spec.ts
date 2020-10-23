@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import * as moment from 'moment';
 import { SecsDateTimeComponent } from './secs-date-time.component';
 
 describe('SecsDateTimeComponent', () => {
@@ -9,10 +9,10 @@ describe('SecsDateTimeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SecsDateTimeComponent ],
+      declarations: [SecsDateTimeComponent],
       imports: [NgbModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -27,5 +27,20 @@ describe('SecsDateTimeComponent', () => {
 
   it('should have method momentChanged()', () => {
     expect(component.momentChanged).toBeDefined();
+  });
+
+  describe('momentChanged', () => {
+    it('should emit', () => {
+      spyOn(component.momentChangedEmitter, 'emit');
+      component.momentChanged();
+      expect(component.momentChangedEmitter.emit).toHaveBeenCalledWith(moment({
+        y: component.date.year,
+        M: component.date.month - 1, // subtract 1 because moment is stupid
+        d: component.date.day,
+        h: component.time.hour,
+        m: component.time.minute,
+        s: component.time.second,
+      }));
+    });
   });
 });
