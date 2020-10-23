@@ -5,10 +5,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { SecsDateTimeComponent } from './secs-date-time/secs-date-time.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SecsDateTimeComponent,
   ],
   imports: [
     BrowserModule,
