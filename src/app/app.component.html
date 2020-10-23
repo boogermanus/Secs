@@ -13,18 +13,33 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    Date: {{date | json}}
-  </div>
-  <div class="row justify-content-center">
     <ngb-timepicker [(ngModel)]="time" [seconds]="true"></ngb-timepicker>
   </div>
-  <div class="row justify-content-center">
-    Time: {{time | json}}
-  </div>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mt-2">
     <button mat-raised-button (click)="calculate()">Calculate</button>
   </div>
   <div class="row justify-content-center">
-    <p>{{this.seconds}}</p>
+    <div class="form-group">
+      <label for="seconds">Seconds</label>
+      <input type="number" class="form-control" id="seconds" [(ngModel)]="calculation.seconds" >
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="form-group">
+      <label for="kiloseconds">Kilo Seconds</label>
+      <input type="number" class="form-control" id="kiloseconds" [(ngModel)]="calculation.kiloSeconds" >
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="form-group">
+      <label for="megaseconds">Mega Seconds</label>
+      <input type="number" class="form-control" id="megaseconds" [(ngModel)]="calculation.megaSeconds" >
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="form-group">
+      <label for="gigaseconds">Giga Seconds</label>
+      <input type="number" class="form-control" id="gigaseconds" [(ngModel)]="calculation.gigaSeconds" >
+    </div>
   </div>
 </div>

@@ -17,7 +17,12 @@ export class AppComponent {
   moment: any;
   range: any = null;
   seconds = 0;
-  calculation: ISecsCalculation;
+  calculation: ISecsCalculation = {
+    seconds: 0,
+    kiloSeconds: 0,
+    megaSeconds: 0,
+    gigaSeconds: 0
+  };
 
   constructor(private calendar: NgbCalendar,
               private secsConverterService: SecsConverterService) {

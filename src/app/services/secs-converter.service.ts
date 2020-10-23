@@ -31,7 +31,7 @@ export class SecsConverterService {
       return calculation;
     }
 
-    calculation.gigaSeconds = calculation.seconds / this.GIGA_SECOND;
+    calculation.gigaSeconds = Math.floor(calculation.seconds / this.GIGA_SECOND);
     calculation.seconds = calculation.seconds % this.GIGA_SECOND;
 
     return calculation;
@@ -42,7 +42,7 @@ export class SecsConverterService {
       return calculation;
     }
 
-    calculation.megaSeconds = calculation.seconds / this.MEGA_SECOND;
+    calculation.megaSeconds = Math.floor(calculation.seconds / this.MEGA_SECOND);
     calculation.seconds = calculation.seconds % this.MEGA_SECOND;
 
     return calculation;
@@ -53,7 +53,7 @@ export class SecsConverterService {
       return calculation;
     }
 
-    calculation.kiloSeconds = calculation.seconds / this.KILO_SECOND;
+    calculation.kiloSeconds = Math.floor(calculation.seconds / this.KILO_SECOND);
     calculation.seconds = calculation.seconds % this.KILO_SECOND;
 
     return calculation;
