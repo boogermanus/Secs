@@ -28,6 +28,10 @@ describe('AppComponent', () => {
     expect(component.calculate).toBeDefined();
   });
 
+  it('should have method updateStartTime', () => {
+    expect(component.updateStartTime).toBeDefined();
+  });
+
   describe('calculate()', () => {
     it('should set calculation to be defined', () => {
       component.calculate();

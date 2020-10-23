@@ -2,7 +2,7 @@
     <div class="form-group">
         <div class="input-group">
             <input class="form-=control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="date" ngbDatepicker
-                #d="ngbDatepicker">
+                #d="ngbDatepicker" (ngModelChange)="ngModelChanged()">
             <div class="input-group-append">
                 <button mat-icon-button (click)="d.toggle()">
                     <mat-icon>calendar_today</mat-icon>
@@ -12,5 +12,5 @@
     </div>
 </div>
 <div class="row justify-content-center">
-    <ngb-timepicker [(ngModel)]="time" [seconds]="true"></ngb-timepicker>
+    <ngb-timepicker [(ngModel)]="time" [seconds]="true" (ngModelChange)="ngModelChanged()"></ngb-timepicker>
 </div>

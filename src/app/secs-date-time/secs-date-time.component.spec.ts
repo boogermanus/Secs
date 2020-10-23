@@ -31,9 +31,9 @@ describe('SecsDateTimeComponent', () => {
 
   describe('momentChanged', () => {
     it('should emit', () => {
-      spyOn(component.momentChangedEmitter, 'emit');
-      component.momentChanged();
-      expect(component.momentChangedEmitter.emit).toHaveBeenCalledWith(moment({
+      spyOn(component.momentChanged, 'emit');
+      component.ngModelChanged();
+      expect(component.momentChanged.emit).toHaveBeenCalledWith(moment({
         y: component.date.year,
         M: component.date.month - 1, // subtract 1 because moment is stupid
         d: component.date.day,

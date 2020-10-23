@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgbCalendar, NgbDateStruct, NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
 
@@ -11,24 +11,30 @@ export class SecsDateTimeComponent implements OnInit {
 
   date: NgbDateStruct;
   time: NgbTimeStruct;
-  momentChangedEmitter: EventEmitter<moment.Moment> = new EventEmitter<moment.Moment>();
+  @Output()momentChanged: EventEmitter<moment.Moment> = new EventEmitter<moment.Moment>();
   constructor(private calendar: NgbCalendar) { }
 
   ngOnInit(): void {
     this.date = this.calendar.getToday();
     const date = moment();
     this.time = { hour: date.hours(), minute: date.minutes(), second: date.seconds() };
+
+    this.ngModelChanged();
   }
 
-  public momentChanged(): void {
-    this.momentChangedEmitter.emit(moment({
+  public ngModelChanged(): void {
+    this.momentChanged.emit(this.getMoment());
+  }
+
+  private getMoment(): moment.Moment {
+    return moment({
       y: this.date.year,
       M: this.date.month - 1, // subtract 1 because moment is stupid
       d: this.date.day,
       h: this.time.hour,
       m: this.time.minute,
       s: this.time.second,
-    }));
+    });
   }
 
 }

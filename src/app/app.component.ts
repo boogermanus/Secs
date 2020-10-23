@@ -12,9 +12,7 @@ const moment = extendMoment(Moment);
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  date: NgbDateStruct;
-  time: NgbTimeStruct;
-  moment: any;
+  start: moment.Moment;
   range: any = null;
   seconds = 0;
   calculation: ISecsCalculation = {
@@ -24,27 +22,19 @@ export class AppComponent {
     gigaSeconds: 0
   };
 
-  constructor(private calendar: NgbCalendar,
-              private secsConverterService: SecsConverterService) {
-    this.date = this.calendar.getToday();
-    const date = moment();
-    this.time = { hour: date.hours(), minute: date.minutes(), second: date.seconds() };
+  constructor(private secsConverterService: SecsConverterService) {
   }
 
   calculate() {
-    const start = moment({
-      y: this.date.year,
-      M: this.date.month - 1, // subtract 1 because moment is stupid
-      d: this.date.day,
-      h: this.time.hour,
-      m: this.time.minute,
-      s: this.time.second,
-    });
     const end = moment();
 
-    this.range = moment.range(start, end);
+    this.range = moment.range(this.start, end);
     this.seconds = Math.abs(this.range.diff('second'));
 
     this.calculation = this.secsConverterService.calculate(this.seconds);
+  }
+
+  updateStartTime(start: moment.Moment): void {
+    this.start = start;
   }
 }
