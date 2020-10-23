@@ -1,31 +1,8 @@
 <div class="container">
   <app-secs-date-time (momentChanged)="updateStartTime($event)" header="Start Date"></app-secs-date-time>
-  <app-secs-date-time header="End Date" [initialMoment]="end"></app-secs-date-time>
+  <app-secs-date-time (momentChanged)="updateEndTime($event)" header="End Date" [initialMoment]="end"></app-secs-date-time>
   <div class="row justify-content-center mt-2">
     <button mat-raised-button (click)="calculate()">Calculate</button>
   </div>
-  <div class="row justify-content-center">
-    <div class="form-group">
-      <label for="seconds">Seconds</label>
-      <input type="number" class="form-control" id="seconds" [(ngModel)]="calculation.seconds" disabled>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="form-group">
-      <label for="kiloseconds">Kilo Seconds</label>
-      <input type="number" class="form-control" id="kiloseconds" [(ngModel)]="calculation.kiloSeconds" disabled>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="form-group">
-      <label for="megaseconds">Mega Seconds</label>
-      <input type="number" class="form-control" id="megaseconds" [(ngModel)]="calculation.megaSeconds" disabled>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="form-group">
-      <label for="gigaseconds">Giga Seconds</label>
-      <input type="number" class="form-control" id="gigaseconds" [(ngModel)]="calculation.gigaSeconds" disabled>
-    </div>
-  </div>
+  <app-secs-display [calculation]="calculation"></app-secs-display>
 </div>

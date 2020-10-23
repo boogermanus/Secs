@@ -40,4 +40,8 @@ export class AppComponent implements OnInit {
   updateStartTime(start: moment.Moment): void {
     this.start = start;
   }
+
+  updateEndTime(end: moment.Moment): void {
+    this.end = end;
+  }
 }

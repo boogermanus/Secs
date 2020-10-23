@@ -6,11 +6,13 @@ import { MaterialModule } from './material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { SecsDateTimeComponent } from './secs-date-time/secs-date-time.component';
+import { SecsDisplayComponent } from './secs-display/secs-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SecsDateTimeComponent,
+    SecsDisplayComponent,
   ],
   imports: [
     BrowserModule,
