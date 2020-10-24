@@ -12,6 +12,14 @@ export class SecsDisplayComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    if (this.calculation === undefined) {
+      this.calculation  = {
+        seconds: 0,
+        kiloSeconds: 0,
+        megaSeconds: 0,
+        gigaSeconds: 0
+      };
+    }
   }
 
 }

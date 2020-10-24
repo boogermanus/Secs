@@ -16,12 +16,7 @@ export class AppComponent implements OnInit {
   end: moment.Moment;
   range: any = null;
   seconds = 0;
-  calculation: ISecsCalculation = {
-    seconds: 0,
-    kiloSeconds: 0,
-    megaSeconds: 0,
-    gigaSeconds: 0
-  };
+  calculation: ISecsCalculation;
 
   constructor(private secsConverterService: SecsConverterService) {
   }

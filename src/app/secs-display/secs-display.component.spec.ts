@@ -1,4 +1,6 @@
+import { DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { SecsDisplayComponent } from './secs-display.component';
 
@@ -22,4 +24,5 @@ describe('SecsDisplayComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
