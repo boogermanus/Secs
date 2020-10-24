@@ -1,19 +1,45 @@
 <div class="row justify-content-center mt-4">
-    <input type="number" class="form-control" style="max-width: 60px;" [(ngModel)]="calculation.gigaSeconds" disabled>
-    <span class="pt-2">Gs</span>
-    <input type="number" class="form-control" style="max-width: 60px;" [(ngModel)]="calculation.megaSeconds" disabled>
-    <span class="pt-2">Ms</span>
-    <input type="number" class="form-control" style="max-width: 60px;" [(ngModel)]="calculation.kiloSeconds" disabled>
-    <span class="pt-2">ks</span>
-    <input type="number" class="form-control" style="max-width: 70px;" [(ngModel)]="calculation.seconds" disabled>
-    <span class="pt-2">s</span>
+    <table>
+        <thead>
+            <th class="table-header">Gs</th>
+            <th class="table-header">Ms</th>
+            <th class="table-header">ks</th>
+            <th class="table-header">s</th>
+        </thead>
+        <tbody>
+            <td>
+                <input type="number" class="form-control" style="max-width: 60px;" [(ngModel)]="calculation.gigaSeconds"
+                    disabled>
+            </td>
+            <td>
+                <input type="number" class="form-control" style="max-width: 60px;" [(ngModel)]="calculation.megaSeconds"
+                    disabled>
+            </td>
+            <td>
+                <input type="number" class="form-control" style="max-width: 60px;" [(ngModel)]="calculation.kiloSeconds"
+                    disabled>
+            </td>
+            <td>
+                <input type="number" class="form-control" style="max-width: 70px;" [(ngModel)]="calculation.seconds"
+                    disabled>
+            </td>
+        </tbody>
+    </table>
 </div>
 <div class="row justify-content-center mt-4">
-    <b>Legend</b><br>
-    <ul>
-        <li>Gs - Gigaseconds</li>
-        <li>Ms - Megaseconds</li>
-        <li>ks - Kiloseconds</li>
-        <li>s - Seconds</li>
-    </ul>
+    <table>
+        <thead>
+            <th style="text-align: center;">Legend</th>
+        </thead>
+        <tbody>
+            <td>
+                <ul>
+                    <li>Gs - Gigaseconds</li>
+                    <li>Ms - Megaseconds</li>
+                    <li>ks - Kiloseconds</li>
+                    <li>s - Seconds</li>
+                </ul>
+            </td>
+        </tbody>
+    </table>
 </div>
