@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NormalTimeComponent } from './normal-time.component';
+import { SecsDisplayComponent } from './secs-display.component';
 
-describe('NormalTimeComponent', () => {
-  let component: NormalTimeComponent;
-  let fixture: ComponentFixture<NormalTimeComponent>;
+describe('SecsDisplayComponent', () => {
+  let component: SecsDisplayComponent;
+  let fixture: ComponentFixture<SecsDisplayComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NormalTimeComponent ]
+      declarations: [ SecsDisplayComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NormalTimeComponent);
+    fixture = TestBed.createComponent(SecsDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -22,4 +22,5 @@ describe('NormalTimeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

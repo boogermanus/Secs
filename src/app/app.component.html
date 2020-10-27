@@ -1,11 +1,8 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <app-normal-time></app-normal-time>
+  <app-secs-date-time (momentChanged)="updateStartTime($event)" header="Start Date"></app-secs-date-time>
+  <app-secs-date-time (momentChanged)="updateEndTime($event)" header="End Date" [initialMoment]="end"></app-secs-date-time>
+  <div class="row justify-content-center mt-2">
+    <button mat-raised-button (click)="calculate()">Calculate</button>
   </div>
-  <div class="row justify-content-center">
-    <app-expanded-time></app-expanded-time>
-  </div>
-  <div class="row justify-content-center">
-    <button mat-raised-button color="primary">Calculate</button>
-  </div>
+  <app-secs-display [calculation]="calculation"></app-secs-display>
 </div>
