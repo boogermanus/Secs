@@ -1,20 +1,25 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { SecsDateTimeComponent } from './secs-date-time/secs-date-time.component';
+import { SecsDisplayComponent } from './secs-display/secs-display.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SecsDateTimeComponent,
+    SecsDisplayComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
     NgbModule,
-    BrowserAnimationsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
