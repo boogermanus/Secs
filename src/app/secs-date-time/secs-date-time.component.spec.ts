@@ -1,19 +1,26 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
 import { SecsDateTimeComponent } from './secs-date-time.component';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('SecsDateTimeComponent', () => {
   let component: SecsDateTimeComponent;
   let fixture: ComponentFixture<SecsDateTimeComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async() => {
     TestBed.configureTestingModule({
       declarations: [SecsDateTimeComponent],
-      imports: [NgbModule]
+      imports: [
+        NgbModule,
+        MatIconModule,
+        FormsModule,
+        ReactiveFormsModule
+      ]
     })
       .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SecsDateTimeComponent);
