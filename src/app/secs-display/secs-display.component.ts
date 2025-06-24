@@ -2,9 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ISecsCalculation } from '../models/isecs-calculation';
 
 @Component({
-  selector: 'app-secs-display',
-  templateUrl: './secs-display.component.html',
-  styleUrls: ['./secs-display.component.css']
+    selector: 'app-secs-display',
+    templateUrl: './secs-display.component.html',
+    styleUrls: ['./secs-display.component.css'],
+    standalone: false
 })
 export class SecsDisplayComponent implements OnInit {
 
