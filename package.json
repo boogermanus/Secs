@@ -22,7 +22,7 @@
     "@angular/router": "^18.2.13",
     "@ng-bootstrap/ng-bootstrap": "^17.0.1",
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.2.0",
+    "bootstrap": "5.3",
     "moment": "^2.29.4",
     "moment-range": "^4.0.2",
     "rxjs": "~7.5.0",
