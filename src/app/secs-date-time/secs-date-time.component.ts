@@ -3,9 +3,10 @@ import { NgbCalendar, NgbDateStruct, NgbTimeStruct } from '@ng-bootstrap/ng-boot
 import moment from 'moment';
 
 @Component({
-  selector: 'app-secs-date-time',
-  templateUrl: './secs-date-time.component.html',
-  styleUrls: ['./secs-date-time.component.css']
+    selector: 'app-secs-date-time',
+    templateUrl: './secs-date-time.component.html',
+    styleUrls: ['./secs-date-time.component.css'],
+    standalone: false
 })
 export class SecsDateTimeComponent implements OnInit {
 
